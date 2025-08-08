@@ -1,0 +1,27 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  STUDENT
+  MENTOR
+}
+
+model User {
+  id       String @id @default(uuid())
+  login    String @unique
+  password String
+
+  firstName String   @map("first_name")
+  lastName  String   @map("second_name")
+  role      UserRole @default(STUDENT)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

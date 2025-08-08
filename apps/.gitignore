@@ -1,0 +1,16 @@
+/node_modules
+/dist
+/.env
+/.idea
+/.vscode
+
+devhub-backend/node_modules
+devhub-backend/dist
+
+devhub-frontend/node_modules
+devhub-frontend/dist
+
+fastapi-backend/__pycache__/
+fastapi-backend/.venv/
+fastapi-backend/*.pyc
+fastapi-backend/.env

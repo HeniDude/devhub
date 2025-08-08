@@ -1,0 +1,17 @@
+:root {
+  --primary-dark: #0e2148;
+  --primary-medium: #483aa0;
+  --primary-light: #7965c1;
+  --accent-warm: #e3d095;
+  --text-dark: #1a1a1a;
+  --text-light: #666666;
+  --white: #ffffff;
+  --bg-light: #f8f9fa;
+  --bg-warm: #f5f0d0;
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-medium: rgba(0, 0, 0, 0.15);
+  --shadow-dark: rgba(14, 33, 72, 0.2);
+  --border-radius: 12px;
+  --border-radius-small: 8px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
