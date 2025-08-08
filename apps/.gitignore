@@ -6,9 +6,11 @@
 
 devhub-backend/node_modules
 devhub-backend/dist
+devhub-backend/.env
 
 devhub-frontend/node_modules
 devhub-frontend/dist
+devhub-frontend/.env
 
 fastapi-backend/__pycache__/
 fastapi-backend/.venv/
