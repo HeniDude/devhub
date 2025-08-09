@@ -5,26 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="353726be-16d6-45a9-8bea-db39ab089786" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../devhub-frontend/src/types/auth/login-user-payload.interface.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../devhub-frontend/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../devhub-frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../devhub-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../devhub-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../devhub-frontend/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../devhub-frontend/src/assets/styles/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/src/assets/styles/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../devhub-frontend/src/components/home/CTASection.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/src/components/home/CTASection.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../devhub-frontend/src/components/home/FeaturesSection.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/src/components/home/FeaturesSection.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../devhub-frontend/src/components/home/Footer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/src/components/home/Footer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../devhub-frontend/src/api/auth/authApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/src/api/auth/authApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../devhub-frontend/src/components/dashboard/DashboardSidebar.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../devhub-frontend/src/components/dashboard/MobileMenu.vue" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../devhub-frontend/src/components/home/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/src/components/home/Header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../devhub-frontend/src/components/home/HeroSection.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/src/components/home/HeroSection.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../devhub-frontend/src/components/home/MentorsSection.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/src/components/home/MentorsSection.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../devhub-frontend/src/components/modal/AuthModal.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../devhub-frontend/src/components/nav/NavPanel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/src/components/nav/NavPanel.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../devhub-frontend/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../devhub-frontend/src/pages/HomePage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/src/pages/HomePage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../devhub-frontend/tsconfig.app.json" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/tsconfig.app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../devhub-frontend/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/vite.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../devhub-frontend/src/components/modal/auth/components/LoginForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/src/components/modal/auth/components/LoginForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../devhub-frontend/src/components/modal/auth/components/RegisterForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/src/components/modal/auth/components/RegisterForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../devhub-frontend/src/components/ui/modal/UIModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/src/components/ui/modal/UIModal.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../devhub-frontend/src/components/ui/modal/UIModalContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/src/components/ui/modal/UIModalContainer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../devhub-frontend/src/pages/DashboardPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/src/pages/DashboardPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../devhub-frontend/src/router/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/src/router/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../devhub-frontend/src/services/auth/login.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/src/services/auth/login.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../devhub-frontend/src/store/user.store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/src/store/user.store.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +75,7 @@
     &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;D:\\mentor-hub\\apps\\devhub-backend\\node_modules\\prettier&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;,
     &quot;ts.external.directory.path&quot;: &quot;D:\\mentor-hub\\apps\\devhub-backend\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -101,7 +98,8 @@
       <workItem from="1754682037431" duration="859000" />
       <workItem from="1754682974780" duration="234000" />
       <workItem from="1754711029018" duration="762000" />
-      <workItem from="1754719197159" duration="896000" />
+      <workItem from="1754719197159" duration="4893000" />
+      <workItem from="1754739855643" duration="2491000" />
     </task>
     <servers />
   </component>

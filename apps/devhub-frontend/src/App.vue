@@ -1,13 +1,15 @@
 <script setup lang="ts">
 import UIModalContainer from "./components/ui/modal/UIModalContainer.vue";
+import UIToast from "@/components/ui/toast/UIToast.vue";
 </script>
 
 <template>
   <div class="app">
-    <router-view />
+    <RouterView />
   </div>
   <teleport to="body">
     <UIModalContainer />
+    <UIToast/>
   </teleport>
 </template>
 

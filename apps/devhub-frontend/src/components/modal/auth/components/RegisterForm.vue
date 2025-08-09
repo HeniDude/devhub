@@ -6,7 +6,9 @@ import { EUserRole } from "@/constants/user-role";
 import { registerService } from "@/services/auth/register.service";
 import type { IRegisterForm } from "@/types/auth/register-user-payload.interface";
 import { useModal } from "@/store/modal.store";
+import {useToast} from "@/composables/useToast.ts";
 
+const { showToast } = useToast();
 const { closeModal, activeModal } = useModal();
 const { handleRegister } = registerService();
 
@@ -80,7 +82,7 @@ const onSubmit = handleSubmit(
       const response = await handleRegister(payload);
       if (response && activeModal) {
         resetForm();
-        closeModal(activeModal.id);
+        showToast(`Пользователь ${payload.login} успешно зарегистрирован`, {type: 'success'});
       }
     } catch (err) {
       console.log(err);

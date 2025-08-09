@@ -1,8 +1,12 @@
 <script setup lang="ts">
 import { defineAsyncComponent } from "vue";
-import { useModal } from "../../store/modal.store";
+import { useModal } from "@/store/modal.store.ts";
+import {useUserStore} from "@/store/user.store.ts";
+import {useRouter} from "vue-router";
 
+const router = useRouter();
 const { openModal } = useModal();
+const { user } = useUserStore();
 
 const openAuthModal = () => {
   openModal({
@@ -27,11 +31,14 @@ const openAuthModal = () => {
         <a href="#mentors" class="nav-link">Менторы</a>
         <a href="#community" class="nav-link">Комьюнити</a>
       </nav>
-      <div class="auth-buttons">
+      <div v-if="user" class="auth-buttons">
         <button class="btn btn-secondary" @click="openAuthModal">Вход</button>
         <button class="btn btn-primary" @click="openAuthModal">
           Регистрация
         </button>
+      </div>
+      <div v-else class="dashboard-button">
+        <button @click="router.push({name: 'Dashboard'})" class="btn btn-secondary">Личный кабинет</button>
       </div>
       <button class="mobile-menu-btn">
         <span class="menu-icon"></span>

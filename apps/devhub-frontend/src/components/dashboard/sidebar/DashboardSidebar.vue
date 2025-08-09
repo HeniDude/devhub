@@ -1,71 +1,109 @@
+<script setup lang="ts">
+import { useRoute } from 'vue-router'
+import {EMainNavDashboardRouteNames,ECommunityNavRouteNames,EIntegrationNavRouteNames} from "@/router/routes/dashboard/dashboard-routes.enum.ts";
+
+const $route = useRoute()
+
+const mainNavItems = [
+  { id: 'profile', text: 'Профиль', icon: '👤', route: { name: EMainNavDashboardRouteNames.Profile }, badge: null },
+  { id: 'mentors', text: 'Мои менторы', icon: '👥', route: { name: EMainNavDashboardRouteNames.Mentors }, badge: '3' },
+  { id: 'students', text: 'Мои ученики', icon: '🎓', route: { name: EMainNavDashboardRouteNames.Students }, badge: '12' },
+  { id: 'groups', text: 'Группы', icon: '👥', route: { name: EMainNavDashboardRouteNames.Groups }, badge: '5' },
+  { id: 'chats', text: 'Чаты', icon: '💬', route: { name: EMainNavDashboardRouteNames.Chats }, badge: '8' }
+]
+
+const communityNavItems = [
+  { id: 'communities', text: 'Сообщества', icon: '🏘️', route: { name: ECommunityNavRouteNames.Community }, badge: null },
+  { id: 'events', text: 'События', icon: '📅', route: { name: ECommunityNavRouteNames.Events }, badge: '2' },
+  { id: 'resources', text: 'Ресурсы', icon: '📚', route: { name: ECommunityNavRouteNames.Resources }, badge: null }
+]
+
+const integrationNavItems = [
+  { id: 'github', text: 'GitHub', icon: '🐙', route: { name: EIntegrationNavRouteNames.Github }, status: 'connected' },
+  { id: 'gitlab', text: 'GitLab', icon: '🦊', route: { name: EIntegrationNavRouteNames.GitLab }, status: 'disconnected' },
+  { id: 'discord', text: 'Discord', icon: '🎮', route: { name: EIntegrationNavRouteNames.Discord }, status: 'connected' }
+]
+
+</script>
+
 <template>
-  <aside class="sidebar" :class="{ 'sidebar--collapsed': isCollapsed }">
+  <aside class="sidebar">
     <div class="sidebar-header">
       <div class="sidebar-logo">
         <div class="logo-icon">🚀</div>
-        <span class="logo-text" v-show="!isCollapsed">MentorHub</span>
+        <span class="logo-text">MentorHub</span>
       </div>
-      <button class="collapse-btn" @click="toggleCollapse">
-        <span class="collapse-icon">◀</span>
-      </button>
     </div>
 
     <nav class="sidebar-nav">
       <div class="nav-section">
-        <h3 class="nav-section-title" v-show="!isCollapsed">Основное</h3>
+        <h3 class="nav-section-title">Основное</h3>
         <ul class="nav-list">
           <li v-for="item in mainNavItems" :key="item.id">
             <router-link 
               :to="item.route" 
               class="nav-link"
-              :class="{ 'nav-link--active': $route.name === item.route }"
+              :class="{ 'nav-link--active': $route.name === item.route.name }"
             >
               <span class="nav-icon">{{ item.icon }}</span>
-              <span class="nav-text" v-show="!isCollapsed">{{ item.text }}</span>
-              <span class="nav-badge" v-if="item.badge && !isCollapsed">{{ item.badge }}</span>
+              <span class="nav-text" >{{ item.text }}</span>
+              <span class="nav-badge" v-if="item.badge">{{ item.badge }}</span>
             </router-link>
           </li>
         </ul>
       </div>
 
       <div class="nav-section">
-        <h3 class="nav-section-title" v-show="!isCollapsed">Сообщества</h3>
+        <h3 class="nav-section-title">Сообщества</h3>
         <ul class="nav-list">
           <li v-for="item in communityNavItems" :key="item.id">
-            <router-link 
-              :to="item.route" 
-              class="nav-link"
-              :class="{ 'nav-link--active': $route.name === item.route }"
+            <a 
+              href="#" 
+              class="nav-link nav-link--disabled"
+              @click.prevent
             >
               <span class="nav-icon">{{ item.icon }}</span>
-              <span class="nav-text" v-show="!isCollapsed">{{ item.text }}</span>
-              <span class="nav-badge" v-if="item.badge && !isCollapsed">{{ item.badge }}</span>
-            </router-link>
+              <span class="nav-text" >{{ item.text }}</span>
+              <span class="nav-badge" v-if="item.badge">{{ item.badge }}</span>
+            </a>
           </li>
         </ul>
       </div>
 
       <div class="nav-section">
-        <h3 class="nav-section-title" v-show="!isCollapsed">Интеграции</h3>
+        <h3 class="nav-section-title">Интеграции</h3>
         <ul class="nav-list">
           <li v-for="item in integrationNavItems" :key="item.id">
             <router-link 
+              v-if="item.id === 'github'"
               :to="item.route" 
               class="nav-link"
-              :class="{ 'nav-link--active': $route.name === item.route }"
+              :class="{ 'nav-link--active': $route.name === item.route.name }"
             >
               <span class="nav-icon">{{ item.icon }}</span>
-              <span class="nav-text" v-show="!isCollapsed">{{ item.text }}</span>
-              <span class="nav-status" v-if="item.status && !isCollapsed" :class="item.status">
+              <span class="nav-text" >{{ item.text }}</span>
+              <span class="nav-status" v-if="item.status" :class="item.status">
                 {{ item.status === 'connected' ? '✓' : '○' }}
               </span>
             </router-link>
+            <a 
+              v-else
+              href="#" 
+              class="nav-link nav-link--disabled"
+              @click.prevent
+            >
+              <span class="nav-icon">{{ item.icon }}</span>
+              <span class="nav-text" >{{ item.text }}</span>
+              <span class="nav-status" v-if="item.status" :class="item.status">
+                {{ item.status === 'connected' ? '✓' : '○' }}
+              </span>
+            </a>
           </li>
         </ul>
       </div>
     </nav>
 
-    <div class="sidebar-footer" v-show="!isCollapsed">
+    <div class="sidebar-footer">
       <div class="user-info">
         <div class="user-avatar">
           <span class="avatar-emoji">👨‍💻</span>
@@ -75,51 +113,13 @@
           <div class="user-role">Frontend Developer</div>
         </div>
       </div>
-      <button class="logout-btn" @click="logout">
+      <button class="logout-btn" @click="">
         <span class="logout-icon">🚪</span>
         <span class="logout-text">Выйти</span>
       </button>
     </div>
   </aside>
 </template>
-
-<script setup lang="ts">
-import { ref } from 'vue'
-import { useRouter } from 'vue-router'
-
-const router = useRouter()
-const isCollapsed = ref(false)
-
-const mainNavItems = [
-  { id: 'profile', text: 'Профиль', icon: '👤', route: '/dashboard', badge: null },
-  { id: 'mentors', text: 'Мои менторы', icon: '👥', route: '/dashboard/mentors', badge: '3' },
-  { id: 'students', text: 'Мои ученики', icon: '🎓', route: '/dashboard/students', badge: '12' },
-  { id: 'groups', text: 'Группы', icon: '👥', route: '/dashboard/groups', badge: '5' },
-  { id: 'chats', text: 'Чаты', icon: '💬', route: '/dashboard/chats', badge: '8' }
-]
-
-const communityNavItems = [
-  { id: 'communities', text: 'Сообщества', icon: '🏘️', route: '/dashboard/communities', badge: null },
-  { id: 'events', text: 'События', icon: '📅', route: '/dashboard/events', badge: '2' },
-  { id: 'resources', text: 'Ресурсы', icon: '📚', route: '/dashboard/resources', badge: null }
-]
-
-const integrationNavItems = [
-  { id: 'github', text: 'GitHub', icon: '🐙', route: '/dashboard/github', status: 'connected' },
-  { id: 'gitlab', text: 'GitLab', icon: '🦊', route: '/dashboard/gitlab', status: 'disconnected' },
-  { id: 'discord', text: 'Discord', icon: '🎮', route: '/dashboard/discord', status: 'connected' }
-]
-
-const toggleCollapse = () => {
-  isCollapsed.value = !isCollapsed.value
-}
-
-const logout = () => {
-  localStorage.removeItem('isAuthenticated')
-  localStorage.removeItem('user')
-  router.push('/')
-}
-</script>
 
 <style scoped>
 .sidebar {
@@ -259,6 +259,16 @@ const logout = () => {
   bottom: 0;
   width: 4px;
   background: var(--accent-warm);
+}
+
+.nav-link--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.nav-link--disabled:hover {
+  background: transparent;
+  color: var(--text-dark);
 }
 
 .nav-icon {

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useModal } from "../../../store/modal.store";
+import { useModal } from "@/store/modal.store.ts";
 import UIModal from "./UIModal.vue";
 import { storeToRefs } from "pinia";
 

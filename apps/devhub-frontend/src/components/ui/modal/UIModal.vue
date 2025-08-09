@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, onMounted, nextTick, onBeforeUnmount } from "vue";
-import { type IModal } from "../../../store/modal.store";
+import { type IModal } from "@/store/modal.store.ts";
 
 const props = defineProps<{ modal: IModal }>();
 
