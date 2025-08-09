@@ -7,30 +7,40 @@ import SocialAuth from "./components/SocialAuth.vue";
 import "./style/auth-form.css";
 
 const emit = defineEmits<{
-  (e: "login", data: { email: string; password: string; remember: boolean }): void;
-  (e: "register", data: {
-    firstName: string;
-    lastName: string;
-    email: string;
-    role: string;
-    password: string;
-    confirmPassword: string;
-    agree: boolean;
-  }): void;
+  (
+    e: "login",
+    data: { login: string; password: string; remember: boolean }
+  ): void;
+  (
+    e: "register",
+    data: {
+      firstName: string;
+      lastName: string;
+      login: string;
+      role: string;
+      password: string;
+      confirmPassword: string;
+      agree: boolean;
+    }
+  ): void;
   (e: "github-auth"): void;
   (e: "google-auth"): void;
 }>();
 
 const isLogin = ref(true);
 
-function handleLogin(data: { email: string; password: string; remember: boolean }) {
+function handleLogin(data: {
+  login: string;
+  password: string;
+  remember: boolean;
+}) {
   emit("login", data);
 }
 
 function handleRegister(data: {
   firstName: string;
   lastName: string;
-  email: string;
+  login: string;
   role: string;
   password: string;
   confirmPassword: string;
@@ -52,21 +62,13 @@ function handleGoogleAuth() {
   <div class="auth-form-container">
     <h2 class="auth-form-title">{{ isLogin ? "Вход" : "Регистрация" }}</h2>
 
-    <AuthToggle 
-      v-model:isLogin="isLogin"
-    />
+    <AuthToggle v-model:isLogin="isLogin" />
 
-    <LoginForm 
-      v-if="isLogin"
-      @login="handleLogin"
-    />
+    <LoginForm v-if="isLogin" @login="handleLogin" />
 
-    <RegisterForm 
-      v-else
-      @register="handleRegister"
-    />
+    <RegisterForm v-else @register="handleRegister" />
 
-    <SocialAuth 
+    <SocialAuth
       @github-auth="handleGithubAuth"
       @google-auth="handleGoogleAuth"
     />

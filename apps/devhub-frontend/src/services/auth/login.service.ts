@@ -1,4 +1,4 @@
-import { authApi } from "../../api/auth/authApi";
+import { authApi } from "@/api/auth/authApi.ts";
 
 export const loginService = () => {
     const handleLogin = async (login: string, password: string) => {

@@ -4,7 +4,7 @@ import type { JwtPayload } from '../../common/interfaces/jwt-payload.interface';
 export const generateToken = (jwtService: JwtService, user: any): { accessToken: string } => {
   const payload: JwtPayload = {
     sub: user.id,
-    email: user.email,
+    login: user.login,
     role: user.role,
   };
 

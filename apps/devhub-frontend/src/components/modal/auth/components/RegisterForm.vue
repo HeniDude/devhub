@@ -1,150 +1,220 @@
 <script setup lang="ts">
-import { ref, reactive } from "vue";
-import { defineEmits } from "vue";
+import { ref } from "vue";
+import { useField, useForm } from "vee-validate";
+import * as yup from "yup";
+import { EUserRole } from "@/constants/user-role";
+import { registerService } from "@/services/auth/register.service";
+import type { IRegisterForm } from "@/types/auth/register-user-payload.interface";
+import { useModal } from "@/store/modal.store";
 
-const emit = defineEmits<{
-  (e: "register", data: {
-    firstName: string;
-    lastName: string;
-    email: string;
-    role: string;
-    password: string;
-    confirmPassword: string;
-    agree: boolean;
-  }): void;
-}>();
+const { closeModal, activeModal } = useModal();
+const { handleRegister } = registerService();
+
+const schema = yup.object({
+  firstName: yup.string().required("Имя обязательно"),
+  lastName: yup.string().required("Фамилия обязательна"),
+  login: yup.string().required("Логин обязателен"),
+  role: yup
+    .mixed<EUserRole>()
+    .oneOf(Object.values(EUserRole), "Выберите роль")
+    .required("Роль обязательна"),
+  password: yup
+    .string()
+    .min(6, "Минимум 6 символов")
+    .required("Пароль обязателен"),
+  confirmPassword: yup
+    .string()
+    .oneOf([yup.ref("password")], "Пароли должны совпадать")
+    .required("Подтверждение пароля обязательно"),
+  agree: yup.boolean().oneOf([true], "Необходимо согласиться с условиями"),
+});
+
+const { handleSubmit, errors, resetForm } = useForm<IRegisterForm>({
+  validationSchema: schema,
+});
+
+const {
+  value: firstName,
+  errorMessage: firstNameError,
+  handleBlur: firstNameBlur,
+} = useField("firstName");
+const {
+  value: lastName,
+  errorMessage: lastNameError,
+  handleBlur: lastNameBlur,
+} = useField("lastName");
+const {
+  value: login,
+  errorMessage: loginError,
+  handleBlur: loginBlur,
+} = useField("login");
+const {
+  value: role,
+  errorMessage: roleError,
+  handleBlur: roleBlur,
+} = useField("role");
+const {
+  value: password,
+  errorMessage: passwordError,
+  handleBlur: passwordBlur,
+} = useField("password");
+const {
+  value: confirmPassword,
+  errorMessage: confirmPasswordError,
+  handleBlur: confirmPasswordBlur,
+} = useField("confirmPassword");
+const {
+  value: agree,
+  errorMessage: agreeError,
+  handleBlur: agreeBlur,
+} = useField("agree");
 
 const showPassword = ref(false);
 const isLoading = ref(false);
+const serverErrorMessage = ref("");
 
-const registerForm = reactive({
-  firstName: "",
-  lastName: "",
-  email: "",
-  role: "",
-  password: "",
-  confirmPassword: "",
-  agree: false,
-});
-
-function handleSubmit() {
-  if (registerForm.password !== registerForm.confirmPassword) {
-    alert("Пароли не совпадают");
-    return;
+const onSubmit = handleSubmit(
+  async ({ confirmPassword, agree, ...payload }) => {
+    isLoading.value = true;
+    try {
+      const response = await handleRegister(payload);
+      if (response && activeModal) {
+        resetForm();
+        closeModal(activeModal.id);
+      }
+    } catch (err) {
+      console.log(err);
+    } finally {
+      isLoading.value = false;
+    }
   }
-  isLoading.value = true;
-  // Тут можно добавить валидацию и отправку
-  emit("register", { ...registerForm });
-  isLoading.value = false;
-}
+);
 </script>
 
 <template>
-  <form class="auth-form" @submit.prevent="handleSubmit" novalidate>
+  <form class="auth-form" @submit.prevent="onSubmit" novalidate>
     <div class="form-row">
       <div class="form-group">
-        <label class="form-label" for="reg-firstName">Имя</label>
+        {{ serverErrorMessage }}
+        <label for="firstName" class="form-label">Имя</label>
         <input
-            id="reg-firstName"
-            type="text"
-            v-model="registerForm.firstName"
-            class="form-input"
-            placeholder="Имя"
-            autocomplete="given-name"
-            required
+          id="firstName"
+          type="text"
+          v-model="firstName"
+          @blur="firstNameBlur"
+          class="form-input"
+          placeholder="Имя"
+          autocomplete="given-name"
+          required
         />
+        <p class="error" v-if="firstNameError">{{ firstNameError }}</p>
       </div>
+
       <div class="form-group">
-        <label class="form-label" for="reg-lastName">Фамилия</label>
+        <label for="lastName" class="form-label">Фамилия</label>
         <input
-            id="reg-lastName"
-            type="text"
-            v-model="registerForm.lastName"
-            class="form-input"
-            placeholder="Фамилия"
-            autocomplete="family-name"
-            required
+          id="lastName"
+          type="text"
+          v-model="lastName"
+          @blur="lastNameBlur"
+          class="form-input"
+          placeholder="Фамилия"
+          autocomplete="family-name"
+          required
         />
+        <p class="error" v-if="lastNameError">{{ lastNameError }}</p>
       </div>
     </div>
 
     <div class="form-group">
-      <label class="form-label" for="reg-email">Email</label>
+      <label for="login" class="form-label">login</label>
       <input
-          id="reg-email"
-          type="email"
-          v-model="registerForm.email"
-          class="form-input"
-          placeholder="your@email.com"
-          autocomplete="email"
-          required
+        id="login"
+        type="login"
+        v-model="login"
+        @blur="loginBlur"
+        class="form-input"
+        placeholder="your login"
+        autocomplete="login"
+        required
       />
+      <p class="error" v-if="loginError">{{ loginError }}</p>
     </div>
 
     <div class="form-group">
-      <label class="form-label" for="reg-role">Роль</label>
+      <label for="role" class="form-label">Роль</label>
       <select
-          v-model="registerForm.role"
-          id="reg-role"
-          class="form-input"
-          required
+        id="role"
+        v-model="role"
+        @blur="roleBlur"
+        class="form-input"
+        required
       >
         <option value="" disabled>Выберите роль</option>
-        <option value="student">Ученик</option>
-        <option value="mentor">Ментор</option>
+        <option :value="EUserRole.STUDENT">Ученик</option>
+        <option :value="EUserRole.MENTOR">Ментор</option>
       </select>
+      <p class="error" v-if="roleError">{{ roleError }}</p>
     </div>
 
     <div class="form-group">
-      <label class="form-label" for="reg-password">Пароль</label>
+      <label for="password" class="form-label">Пароль</label>
       <div class="password-input">
         <input
-            :type="showPassword ? 'text' : 'password'"
-            v-model="registerForm.password"
-            id="reg-password"
-            class="form-input"
-            placeholder="Создайте пароль"
-            autocomplete="new-password"
-            required
+          :type="showPassword ? 'text' : 'password'"
+          id="password"
+          v-model="password"
+          @blur="passwordBlur"
+          class="form-input"
+          placeholder="Создайте пароль"
+          autocomplete="new-password"
+          required
         />
         <button
-            type="button"
-            class="password-toggle"
-            @click="showPassword = !showPassword"
-            aria-label="Показать/скрыть пароль"
+          type="button"
+          class="password-toggle"
+          @click="showPassword = !showPassword"
+          aria-label="Показать/скрыть пароль"
         >
           {{ showPassword ? "👁️" : "🙈" }}
         </button>
       </div>
+      <p class="error" v-if="passwordError">{{ passwordError }}</p>
     </div>
 
     <div class="form-group">
-      <label class="form-label" for="reg-confirmPassword">Подтвердите пароль</label>
+      <label for="confirmPassword" class="form-label">Подтвердите пароль</label>
       <div class="password-input">
         <input
-            :type="showPassword ? 'text' : 'password'"
-            v-model="registerForm.confirmPassword"
-            id="reg-confirmPassword"
-            class="form-input"
-            placeholder="Повторите пароль"
-            autocomplete="new-password"
-            required
+          :type="showPassword ? 'text' : 'password'"
+          id="confirmPassword"
+          v-model="confirmPassword"
+          @blur="confirmPasswordBlur"
+          class="form-input"
+          placeholder="Повторите пароль"
+          autocomplete="new-password"
+          required
         />
       </div>
+      <p class="error" v-if="confirmPasswordError">
+        {{ confirmPasswordError }}
+      </p>
     </div>
 
     <div class="form-options">
-      <label class="checkbox-label" for="agree-terms">
+      <label for="agree" class="checkbox-label">
         <input
-            type="checkbox"
-            v-model="registerForm.agree"
-            id="agree-terms"
-            required
+          type="checkbox"
+          id="agree"
+          v-model="agree"
+          @blur="agreeBlur"
+          required
         />
         <span class="checkmark"></span>
         Я согласен с
         <a href="#" class="terms-link">условиями использования</a>
       </label>
+      <p class="error" v-if="agreeError">{{ agreeError }}</p>
     </div>
 
     <button type="submit" class="submit-btn" :disabled="isLoading">
@@ -153,3 +223,5 @@ function handleSubmit() {
     </button>
   </form>
 </template>
+
+<style scoped></style>

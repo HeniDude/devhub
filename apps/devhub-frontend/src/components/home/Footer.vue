@@ -76,8 +76,8 @@
             <h4 class="newsletter-title">Подписка на новости</h4>
             <div class="newsletter-form">
               <input 
-                type="email" 
-                placeholder="Ваш email" 
+                type="login" 
+                placeholder="Ваш login" 
                 class="newsletter-input"
               />
               <button class="newsletter-btn">
