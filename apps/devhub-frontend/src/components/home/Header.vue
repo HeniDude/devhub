@@ -1,59 +1,44 @@
+<script setup lang="ts">
+import { defineAsyncComponent } from "vue";
+import { useModal } from "../../store/modal.store";
+
+const { openModal } = useModal();
+
+const openAuthModal = () => {
+  openModal({
+    component: defineAsyncComponent(() => import("../modal/auth/AuthModal.vue")),
+    modalProps: {
+      isHaveCloseModal: true,
+      isShowXBtn: true,
+    },
+  });
+};
+</script>
+
 <template>
   <header class="header">
     <div class="header-container">
-      <!-- Логотип -->
       <div class="logo">
         <div class="logo-icon">🚀</div>
         <span class="logo-text">MentorHub</span>
       </div>
-
-      <!-- Навигация -->
       <nav class="nav">
         <a href="#about" class="nav-link">О платформе</a>
         <a href="#mentors" class="nav-link">Менторы</a>
         <a href="#community" class="nav-link">Комьюнити</a>
       </nav>
-
-      <!-- Кнопки авторизации -->
       <div class="auth-buttons">
-        <button class="btn btn-secondary" @click="$emit('open-auth')">Вход</button>
-        <button class="btn btn-primary" @click="$emit('open-auth')">Регистрация</button>
+        <button class="btn btn-secondary" @click="openAuthModal">Вход</button>
+        <button class="btn btn-primary" @click="openAuthModal">
+          Регистрация
+        </button>
       </div>
-
-      <!-- Мобильное меню -->
-      <button class="mobile-menu-btn" @click="toggleMobileMenu">
+      <button class="mobile-menu-btn">
         <span class="menu-icon"></span>
       </button>
     </div>
-
-    <!-- Мобильное меню -->
-    <div class="mobile-menu" :class="{ 'mobile-menu--open': isMobileMenuOpen }">
-      <nav class="mobile-nav">
-        <a href="#about" class="mobile-nav-link">О платформе</a>
-        <a href="#mentors" class="mobile-nav-link">Менторы</a>
-        <a href="#community" class="mobile-nav-link">Комьюнити</a>
-        <div class="mobile-auth">
-          <button class="btn btn-secondary btn-full" @click="$emit('open-auth')">Вход</button>
-          <button class="btn btn-primary btn-full" @click="$emit('open-auth')">Регистрация</button>
-        </div>
-      </nav>
-    </div>
   </header>
 </template>
-
-<script setup lang="ts">
-import { ref } from 'vue'
-
-const isMobileMenuOpen = ref(false)
-
-const toggleMobileMenu = () => {
-  isMobileMenuOpen.value = !isMobileMenuOpen.value
-}
-
-defineEmits<{
-  'open-auth': []
-}>()
-</script>
 
 <style scoped>
 .header {
@@ -92,7 +77,11 @@ defineEmits<{
 }
 
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translateY(0);
   }
   40% {
@@ -121,7 +110,7 @@ defineEmits<{
 }
 
 .nav-link::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -4px;
   left: 0;
@@ -154,7 +143,11 @@ defineEmits<{
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary-medium) 0%, var(--primary-light) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--primary-medium) 0%,
+    var(--primary-light) 100%
+  );
   color: white;
   box-shadow: 0 4px 15px rgba(121, 101, 193, 0.3);
 }
@@ -197,7 +190,7 @@ defineEmits<{
 
 .menu-icon::before,
 .menu-icon::after {
-  content: '';
+  content: "";
   position: absolute;
 }
 
@@ -283,4 +276,4 @@ defineEmits<{
     gap: 1.5rem;
   }
 }
-</style> 
+</style>

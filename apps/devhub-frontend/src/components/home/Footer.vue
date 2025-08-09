@@ -2,7 +2,6 @@
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-content">
-        <!-- Основная информация -->
         <div class="footer-section">
           <div class="footer-logo">
             <div class="logo-icon">🚀</div>
@@ -27,8 +26,6 @@
             </a>
           </div>
         </div>
-
-        <!-- Навигация -->
         <div class="footer-section">
           <h3 class="footer-title">Платформа</h3>
           <ul class="footer-links">
@@ -39,8 +36,6 @@
             <li><a href="#blog" class="footer-link">Блог</a></li>
           </ul>
         </div>
-
-        <!-- Поддержка -->
         <div class="footer-section">
           <h3 class="footer-title">Поддержка</h3>
           <ul class="footer-links">
@@ -51,8 +46,6 @@
             <li><a href="#status" class="footer-link">Статус сервиса</a></li>
           </ul>
         </div>
-
-        <!-- Правовая информация -->
         <div class="footer-section">
           <h3 class="footer-title">Правовая информация</h3>
           <ul class="footer-links">
@@ -63,8 +56,6 @@
             <li><a href="#compliance" class="footer-link">Соответствие</a></li>
           </ul>
         </div>
-
-        <!-- Контакты -->
         <div class="footer-section">
           <h3 class="footer-title">Контакты</h3>
           <div class="contact-info">
@@ -81,7 +72,6 @@
               <span class="contact-text">Москва, Россия</span>
             </div>
           </div>
-          
           <div class="newsletter">
             <h4 class="newsletter-title">Подписка на новости</h4>
             <div class="newsletter-form">
@@ -97,8 +87,6 @@
           </div>
         </div>
       </div>
-
-      <!-- Нижняя часть футера -->
       <div class="footer-bottom">
         <div class="footer-bottom-content">
           <p class="copyright">
@@ -114,10 +102,6 @@
     </div>
   </footer>
 </template>
-
-<script setup lang="ts">
-// Компонент не требует дополнительной логики
-</script>
 
 <style scoped>
 .footer {

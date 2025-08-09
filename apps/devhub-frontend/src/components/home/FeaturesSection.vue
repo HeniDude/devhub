@@ -1,34 +1,3 @@
-<template>
-  <section class="features" id="about">
-    <div class="features-container">
-      <div class="features-header">
-        <h2 class="features-title">
-          Почему выбирают <span class="title-accent">MentorHub</span>
-        </h2>
-        <p class="features-subtitle">
-          Наша платформа объединяет лучшие практики менторства с современными технологиями
-        </p>
-      </div>
-
-      <div class="features-grid">
-        <div class="feature-card" v-for="feature in features" :key="feature.id">
-          <div class="feature-icon">
-            <span class="icon-emoji">{{ feature.icon }}</span>
-          </div>
-          <h3 class="feature-title">{{ feature.title }}</h3>
-          <p class="feature-description">{{ feature.description }}</p>
-          <div class="feature-benefits">
-            <div class="benefit-item" v-for="benefit in feature.benefits" :key="benefit">
-              <span class="benefit-icon">✓</span>
-              <span class="benefit-text">{{ benefit }}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</template>
-
 <script setup lang="ts">
 import { ref } from 'vue'
 
@@ -83,6 +52,37 @@ const features = ref([
   }
 ])
 </script>
+
+<template>
+  <section class="features" id="about">
+    <div class="features-container">
+      <div class="features-header">
+        <h2 class="features-title">
+          Почему выбирают <span class="title-accent">MentorHub</span>
+        </h2>
+        <p class="features-subtitle">
+          Наша платформа объединяет лучшие практики менторства с современными технологиями
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card" v-for="feature in features" :key="feature.id">
+          <div class="feature-icon">
+            <span class="icon-emoji">{{ feature.icon }}</span>
+          </div>
+          <h3 class="feature-title">{{ feature.title }}</h3>
+          <p class="feature-description">{{ feature.description }}</p>
+          <div class="feature-benefits">
+            <div class="benefit-item" v-for="benefit in feature.benefits" :key="benefit">
+              <span class="benefit-icon">✓</span>
+              <span class="benefit-text">{{ benefit }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
 
 <style scoped>
 .features {

@@ -5,8 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="353726be-16d6-45a9-8bea-db39ab089786" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.prettierignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/auth/strategies/jwt.strategy.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../devhub-frontend/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../devhub-frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../devhub-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../devhub-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../devhub-frontend/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../devhub-frontend/src/assets/styles/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/src/assets/styles/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../devhub-frontend/src/components/home/CTASection.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/src/components/home/CTASection.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../devhub-frontend/src/components/home/FeaturesSection.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/src/components/home/FeaturesSection.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../devhub-frontend/src/components/home/Footer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/src/components/home/Footer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../devhub-frontend/src/components/home/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/src/components/home/Header.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../devhub-frontend/src/components/home/HeroSection.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/src/components/home/HeroSection.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../devhub-frontend/src/components/home/MentorsSection.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/src/components/home/MentorsSection.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../devhub-frontend/src/components/modal/AuthModal.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../devhub-frontend/src/components/nav/NavPanel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/src/components/nav/NavPanel.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../devhub-frontend/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../devhub-frontend/src/pages/HomePage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/src/pages/HomePage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../devhub-frontend/tsconfig.app.json" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/tsconfig.app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../devhub-frontend/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../devhub-frontend/vite.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +39,20 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;HeniDude&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/HeniDude/devhub.git&quot;,
+    &quot;accountId&quot;: &quot;bc00398f-b93d-46cd-bc7c-786208e7039b&quot;
+  }
+}</component>
   <component name="OptimizeOnSaveOptions">
     <option name="myRunOnSave" value="true" />
   </component>
@@ -41,7 +71,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -70,6 +100,8 @@
       <updated>1754682036585</updated>
       <workItem from="1754682037431" duration="859000" />
       <workItem from="1754682974780" duration="234000" />
+      <workItem from="1754711029018" duration="762000" />
+      <workItem from="1754719197159" duration="896000" />
     </task>
     <servers />
   </component>

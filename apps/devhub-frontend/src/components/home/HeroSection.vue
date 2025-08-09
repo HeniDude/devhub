@@ -77,8 +77,7 @@
         </div>
       </div>
     </div>
-    
-    <!-- Фоновая анимация -->
+
     <div class="hero-background">
       <div class="bg-shape shape-1"></div>
       <div class="bg-shape shape-2"></div>
@@ -86,10 +85,6 @@
     </div>
   </section>
 </template>
-
-<script setup lang="ts">
-// Компонент не требует дополнительной логики
-</script>
 
 <style scoped>
 .hero {

@@ -1,92 +1,3 @@
-<template>
-  <section class="mentors" id="mentors">
-    <div class="mentors-container">
-      <div class="mentors-header">
-        <h2 class="mentors-title">
-          Популярные <span class="title-accent">менторы</span>
-        </h2>
-        <p class="mentors-subtitle">
-          Выберите эксперта в своей области и начните развиваться уже сегодня
-        </p>
-      </div>
-
-      <div class="mentors-grid">
-        <div 
-          class="mentor-card" 
-          v-for="mentor in mentors" 
-          :key="mentor.id"
-          @click="selectMentor(mentor)"
-        >
-          <div class="mentor-header">
-            <div class="mentor-avatar">
-              <span class="avatar-emoji">{{ mentor.avatar }}</span>
-              <div class="online-status" :class="{ 'online': mentor.isOnline }"></div>
-            </div>
-            <div class="mentor-info">
-              <h3 class="mentor-name">{{ mentor.name }}</h3>
-              <p class="mentor-role">{{ mentor.role }}</p>
-              <div class="mentor-rating">
-                <div class="stars">
-                  <span 
-                    class="star" 
-                    v-for="i in 5" 
-                    :key="i"
-                    :class="{ 'filled': i <= mentor.rating }"
-                  >★</span>
-                </div>
-                <span class="rating-text">{{ mentor.rating }}/5</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="mentor-skills">
-            <span 
-              class="skill-tag" 
-              v-for="skill in mentor.skills" 
-              :key="skill"
-            >{{ skill }}</span>
-          </div>
-
-          <p class="mentor-description">{{ mentor.description }}</p>
-
-          <div class="mentor-stats">
-            <div class="stat">
-              <span class="stat-number">{{ mentor.students }}</span>
-              <span class="stat-label">учеников</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number">{{ mentor.experience }}</span>
-              <span class="stat-label">лет опыта</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number">{{ mentor.projects }}</span>
-              <span class="stat-label">проектов</span>
-            </div>
-          </div>
-
-          <div class="mentor-actions">
-            <button class="btn btn-primary btn-full">
-              <span class="btn-icon">💬</span>
-              Связаться
-            </button>
-            <button class="btn btn-secondary btn-full">
-              <span class="btn-icon">👁️</span>
-              Профиль
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div class="mentors-cta">
-        <button class="btn btn-primary btn-large">
-          <span class="btn-icon">🔍</span>
-          Найти больше менторов
-        </button>
-      </div>
-    </div>
-  </section>
-</template>
-
 <script setup lang="ts">
 import { ref } from 'vue'
 
@@ -176,6 +87,95 @@ const selectMentor = (mentor: any) => {
   // Здесь будет логика перехода к профилю ментора
 }
 </script>
+
+<template>
+  <section class="mentors" id="mentors">
+    <div class="mentors-container">
+      <div class="mentors-header">
+        <h2 class="mentors-title">
+          Популярные <span class="title-accent">менторы</span>
+        </h2>
+        <p class="mentors-subtitle">
+          Выберите эксперта в своей области и начните развиваться уже сегодня
+        </p>
+      </div>
+
+      <div class="mentors-grid">
+        <div 
+          class="mentor-card" 
+          v-for="mentor in mentors" 
+          :key="mentor.id"
+          @click="selectMentor(mentor)"
+        >
+          <div class="mentor-header">
+            <div class="mentor-avatar">
+              <span class="avatar-emoji">{{ mentor.avatar }}</span>
+              <div class="online-status" :class="{ 'online': mentor.isOnline }"></div>
+            </div>
+            <div class="mentor-info">
+              <h3 class="mentor-name">{{ mentor.name }}</h3>
+              <p class="mentor-role">{{ mentor.role }}</p>
+              <div class="mentor-rating">
+                <div class="stars">
+                  <span 
+                    class="star" 
+                    v-for="i in 5" 
+                    :key="i"
+                    :class="{ 'filled': i <= mentor.rating }"
+                  >★</span>
+                </div>
+                <span class="rating-text">{{ mentor.rating }}/5</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mentor-skills">
+            <span 
+              class="skill-tag" 
+              v-for="skill in mentor.skills" 
+              :key="skill"
+            >{{ skill }}</span>
+          </div>
+
+          <p class="mentor-description">{{ mentor.description }}</p>
+
+          <div class="mentor-stats">
+            <div class="stat">
+              <span class="stat-number">{{ mentor.students }}</span>
+              <span class="stat-label">учеников</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">{{ mentor.experience }}</span>
+              <span class="stat-label">лет опыта</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">{{ mentor.projects }}</span>
+              <span class="stat-label">проектов</span>
+            </div>
+          </div>
+
+          <div class="mentor-actions">
+            <button class="btn btn-primary btn-full">
+              <span class="btn-icon">💬</span>
+              Связаться
+            </button>
+            <button class="btn btn-secondary btn-full">
+              <span class="btn-icon">👁️</span>
+              Профиль
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="mentors-cta">
+        <button class="btn btn-primary btn-large">
+          <span class="btn-icon">🔍</span>
+          Найти больше менторов
+        </button>
+      </div>
+    </div>
+  </section>
+</template>
 
 <style scoped>
 .mentors {

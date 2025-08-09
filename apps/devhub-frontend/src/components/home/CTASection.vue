@@ -93,7 +93,6 @@
       </div>
     </div>
 
-    <!-- Фоновые элементы -->
     <div class="cta-background">
       <div class="bg-circle circle-1"></div>
       <div class="bg-circle circle-2"></div>
@@ -101,10 +100,6 @@
     </div>
   </section>
 </template>
-
-<script setup lang="ts">
-// Компонент не требует дополнительной логики
-</script>
 
 <style scoped>
 .cta {

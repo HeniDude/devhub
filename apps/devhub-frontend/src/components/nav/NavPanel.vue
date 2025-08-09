@@ -5,7 +5,6 @@
       <div class="trigger-icon">⚡</div>
       <div class="trigger-label">MentorHub</div>
     </div>
-
     <div
       class="nav-panel"
       :class="{ 'nav-panel--visible': showPanel }"
