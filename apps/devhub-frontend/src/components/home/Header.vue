@@ -8,6 +8,8 @@ const router = useRouter();
 const { openModal } = useModal();
 const { user } = useUserStore();
 
+console.log(user)
+
 const openAuthModal = () => {
   openModal({
     component: defineAsyncComponent(() => import("../modal/auth/AuthModal.vue")),
@@ -31,6 +33,7 @@ const openAuthModal = () => {
         <a href="#mentors" class="nav-link">Менторы</a>
         <a href="#community" class="nav-link">Комьюнити</a>
       </nav>
+      {{user}}
       <div v-if="user" class="auth-buttons">
         <button class="btn btn-secondary" @click="openAuthModal">Вход</button>
         <button class="btn btn-primary" @click="openAuthModal">

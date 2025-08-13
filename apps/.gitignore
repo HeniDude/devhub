@@ -1,8 +1,15 @@
 /node_modules
 /dist
+/build
 /.env
 /.idea
 /.vscode
+
+logs/
+*.log
+*.log.*
+
+**/docker-compose.ovverride.yml
 
 devhub-backend/node_modules
 devhub-backend/dist
