@@ -1,0 +1,555 @@
+{
+  "stack_suggestions": {
+    "frontend": [
+      {
+        "name": "React",
+        "description": "Библиотека для построения UI с компонентным подходом.",
+        "use_cases": ["SPA", "Корпоративные порталы", "SaaS-платформы"],
+        "pros": ["Огромное сообщество", "Большая экосистема", "Поддержка TypeScript"],
+        "cons": ["Крутая кривая обучения для новичков", "Много устаревших библиотек"],
+        "alternatives": ["Vue.js", "Angular", "Svelte"]
+      },
+      {
+        "name": "Vue.js",
+        "description": "Прогрессивный фреймворк с низким порогом входа.",
+        "use_cases": ["Админки", "Прототипы", "Малые и средние проекты"],
+        "pros": ["Простой старт", "Хорошая документация", "Гибкий"],
+        "cons": ["Меньше вакансий", "Меньше экосистема, чем у React"],
+        "alternatives": ["React", "Svelte"]
+      },
+      {
+        "name": "Angular",
+        "description": "Фреймворк от Google для больших проектов.",
+        "use_cases": ["Enterprise-приложения", "Сложные системы"],
+        "pros": ["Строгая структура", "Всё из коробки", "Поддержка Google"],
+        "cons": ["Тяжёлый", "Сложнее вход"],
+        "alternatives": ["React", "Vue"]
+      },
+      {
+        "name": "Next.js",
+        "description": "Фреймворк для React с SSR и SSG.",
+        "use_cases": ["SEO сайты", "Блоги", "Маркетплейсы"],
+        "pros": ["SSR/SSG", "Edge rendering", "Поддержка Vercel"],
+        "cons": ["Привязанность к React"],
+        "alternatives": ["Nuxt.js", "Astro"]
+      },
+      {
+        "name": "Svelte",
+        "description": "Фреймворк без виртуального DOM, компиляция в чистый JS.",
+        "use_cases": ["Малые проекты", "Высокопроизводительные UI"],
+        "pros": ["Малый размер бандла", "Простота синтаксиса"],
+        "cons": ["Малое сообщество", "Мало вакансий"],
+        "alternatives": ["React", "Vue"]
+      }
+    ],
+    "backend": [
+      {
+        "name": "NestJS",
+        "description": "Node.js фреймворк с архитектурой Angular.",
+        "use_cases": ["API-first приложения", "Микросервисы", "GraphQL"],
+        "pros": ["Чёткая структура", "TypeScript", "Подходит для больших проектов"],
+        "cons": ["Избыточен для маленьких сервисов"],
+        "alternatives": ["Express.js", "Fastify"]
+      },
+      {
+        "name": "Express.js",
+        "description": "Минималистичный веб-фреймворк для Node.js.",
+        "use_cases": ["Простые API", "Быстрые прототипы"],
+        "pros": ["Очень гибкий", "Много middleware"],
+        "cons": ["Нет структуры", "Может стать хаотичным"],
+        "alternatives": ["NestJS", "Fastify"]
+      },
+      {
+        "name": "Fastify",
+        "description": "Высокопроизводительный Node.js фреймворк.",
+        "use_cases": ["Высоконагруженные API", "Микросервисы"],
+        "pros": ["Очень быстрый", "Поддержка TypeScript"],
+        "cons": ["Меньше сообщество"],
+        "alternatives": ["Express.js", "NestJS"]
+      },
+      {
+        "name": "Django",
+        "description": "Python-фреймворк 'batteries included'.",
+        "use_cases": ["CRM", "E-commerce", "Админки"],
+        "pros": ["Много готового", "Безопасный", "ORM из коробки"],
+        "cons": ["Медленнее, чем Node.js"],
+        "alternatives": ["Flask", "FastAPI"]
+      },
+      {
+        "name": "Spring Boot",
+        "description": "Java-фреймворк для Enterprise приложений.",
+        "use_cases": ["Банковский софт", "Крупные системы"],
+        "pros": ["Надёжный", "Большое коммьюнити"],
+        "cons": ["Крутая кривая обучения", "Тяжеловесный"],
+        "alternatives": ["Micronaut", "Quarkus"]
+      },
+      {
+        "name": "ASP.NET Core",
+        "description": "Фреймворк от Microsoft для C#.",
+        "use_cases": ["Корпоративные системы", "API"],
+        "pros": ["Поддержка Microsoft", "Высокая производительность"],
+        "cons": ["Привязка к экосистеме MS"],
+        "alternatives": ["Spring Boot", "NestJS"]
+      },
+      {
+        "name": "Go (Gin/Fiber)",
+        "description": "Минималистичные веб-фреймворки для Go.",
+        "use_cases": ["Микросервисы", "Высоконагруженные API"],
+        "pros": ["Высокая производительность", "Простая деплойка"],
+        "cons": ["Небольшое коммьюнити по сравнению с Java/Python"],
+        "alternatives": ["Spring Boot", "FastAPI"]
+      }
+    ],
+    "databases": [
+      {
+        "name": "PostgreSQL",
+        "description": "Реляционная SQL-база с поддержкой JSON.",
+        "use_cases": ["Финансы", "E-commerce", "SaaS"],
+        "pros": ["Мощный функционал", "ACID"],
+        "cons": ["Сложнее в администрировании, чем MySQL"],
+        "alternatives": ["MySQL", "MariaDB"]
+      },
+      {
+        "name": "MySQL",
+        "description": "Популярная реляционная БД.",
+        "use_cases": ["WordPress", "Простые сайты"],
+        "pros": ["Простая", "Широкая поддержка"],
+        "cons": ["Меньше возможностей, чем PostgreSQL"],
+        "alternatives": ["PostgreSQL", "MariaDB"]
+      },
+      {
+        "name": "MariaDB",
+        "description": "Форк MySQL с улучшенной производительностью.",
+        "use_cases": ["Сайты", "Базы с нагрузкой"],
+        "pros": ["Более быстрая, чем MySQL"],
+        "cons": ["Меньше экосистема"],
+        "alternatives": ["MySQL"]
+      },
+      {
+        "name": "MongoDB",
+        "description": "NoSQL документоориентированная база.",
+        "use_cases": ["Чаты", "IoT", "Прототипы"],
+        "pros": ["Гибкая схема", "Хороша для быстрых изменений"],
+        "cons": ["Нет ACID как в SQL"],
+        "alternatives": ["CouchDB", "DynamoDB"]
+      },
+      {
+        "name": "Redis",
+        "description": "In-memory key-value хранилище.",
+        "use_cases": ["Кеш", "Сессии", "Очереди"],
+        "pros": ["Очень быстрый", "Простой"],
+        "cons": ["Не для больших данных"],
+        "alternatives": ["Memcached"]
+      },
+      {
+        "name": "Cassandra",
+        "description": "NoSQL база для больших данных.",
+        "use_cases": ["Big Data", "Realtime аналитика"],
+        "pros": ["Масштабируемость", "Fault tolerance"],
+        "cons": ["Сложная настройка"],
+        "alternatives": ["HBase", "DynamoDB"]
+      },
+      {
+        "name": "SQLite",
+        "description": "Лёгкая встраиваемая SQL база.",
+        "use_cases": ["Мобильные приложения", "Прототипы"],
+        "pros": ["Не требует сервера"],
+        "cons": ["Не подходит для highload"],
+        "alternatives": ["PostgreSQL", "MySQL"]
+      }
+    ],
+    "devops": [
+      {
+        "name": "Docker",
+        "description": "Платформа контейнеризации.",
+        "use_cases": ["Изоляция окружений", "CI/CD"],
+        "pros": ["Упрощает деплой", "Кроссплатформенность"],
+        "cons": ["Кривая обучения для новичков"],
+        "alternatives": ["Podman", "LXC"]
+      },
+      {
+        "name": "Kubernetes",
+        "description": "Оркестратор контейнеров.",
+        "use_cases": ["Микросервисы", "Highload"],
+        "pros": ["Масштабируемость", "Автоматизация"],
+        "cons": ["Очень сложный порог входа"],
+        "alternatives": ["Nomad", "Docker Swarm"]
+      },
+      {
+        "name": "Terraform",
+        "description": "IaC инструмент для управления инфраструктурой.",
+        "use_cases": ["AWS/GCP/Azure", "Cloud инфраструктуры"],
+        "pros": ["Универсальность", "Версионирование"],
+        "cons": ["Сложный синтаксис HCL"],
+        "alternatives": ["Pulumi", "CloudFormation"]
+      },
+      {
+        "name": "Ansible",
+        "description": "Автоматизация конфигураций и деплоя.",
+        "use_cases": ["DevOps", "CI/CD"],
+        "pros": ["Простота YAML", "Без агентов"],
+        "cons": ["Медленнее Puppet/Chef"],
+        "alternatives": ["Puppet", "Chef"]
+      },
+      {
+        "name": "Helm",
+        "description": "Пакетный менеджер для Kubernetes.",
+        "use_cases": ["K8s деплой"],
+        "pros": ["Упрощает управление приложениями"],
+        "cons": ["Нужен опыт с K8s"],
+        "alternatives": ["Kustomize"]
+      }
+    ],
+    "mobile": [
+      {
+        "name": "React Native",
+        "description": "Фреймворк для кроссплатформенных мобильных приложений на JavaScript.",
+        "use_cases": ["iOS + Android приложения", "MVP", "Стартапы"],
+        "pros": ["Один код на две платформы", "Большое сообщество"],
+        "cons": ["Не всегда нативный UX", "Может быть медленнее нативных приложений"],
+        "alternatives": ["Flutter", "Kotlin Multiplatform", "Swift + Kotlin"]
+      },
+      {
+        "name": "Flutter",
+        "description": "Фреймворк от Google на языке Dart.",
+        "use_cases": ["Кроссплатформенные приложения", "UI-heavy продукты"],
+        "pros": ["Высокая производительность", "Огромное количество виджетов"],
+        "cons": ["Язык Dart не так популярен"],
+        "alternatives": ["React Native"]
+      },
+      {
+        "name": "Swift",
+        "description": "Язык программирования для iOS/macOS.",
+        "use_cases": ["Нативные iOS приложения"],
+        "pros": ["Нативный UX", "Поддержка Apple"],
+        "cons": ["Только iOS"],
+        "alternatives": ["React Native", "Flutter"]
+      },
+      {
+        "name": "Kotlin",
+        "description": "Современный язык для Android разработки.",
+        "use_cases": ["Нативные Android приложения"],
+        "pros": ["Нативный UX", "Поддержка Google"],
+        "cons": ["Только Android"],
+        "alternatives": ["Java", "Flutter"]
+      }
+    ],
+    "testing": [
+      {
+        "name": "Jest",
+        "description": "Тестовый фреймворк для JS/TS.",
+        "use_cases": ["Unit-тесты", "Frontend", "Node.js"],
+        "pros": ["Быстрый", "Снапшоты", "Интеграция с React"],
+        "cons": ["Только JS/TS"],
+        "alternatives": ["Mocha", "Vitest"]
+      },
+      {
+        "name": "Cypress",
+        "description": "E2E тестирование веб-приложений.",
+        "use_cases": ["UI-тестирование", "Интеграционные тесты"],
+        "pros": ["Простой синтаксис", "Всё в браузере"],
+        "cons": ["Не подходит для API-тестов"],
+        "alternatives": ["Playwright", "Selenium"]
+      },
+      {
+        "name": "Playwright",
+        "description": "Фреймворк от Microsoft для UI тестирования.",
+        "use_cases": ["E2E тесты", "Кроссбраузерное тестирование"],
+        "pros": ["Поддержка всех браузеров", "Быстрый"],
+        "cons": ["Новая технология — меньше коммьюнити"],
+        "alternatives": ["Cypress", "Selenium"]
+      },
+      {
+        "name": "Pytest",
+        "description": "Фреймворк для Python тестов.",
+        "use_cases": ["Backend на Python"],
+        "pros": ["Простой синтаксис", "Мощные плагины"],
+        "cons": ["Только Python"],
+        "alternatives": ["unittest", "Robot Framework"]
+      },
+      {
+        "name": "JUnit",
+        "description": "Фреймворк для тестирования Java приложений.",
+        "use_cases": ["Java backend"],
+        "pros": ["Де-факто стандарт в Java"],
+        "cons": ["Только для Java"],
+        "alternatives": ["TestNG"]
+      }
+    ],
+    "ui_frameworks": [
+      {
+        "name": "TailwindCSS",
+        "description": "Utility-first CSS фреймворк.",
+        "use_cases": ["Современные UI", "SaaS", "Startup проекты"],
+        "pros": ["Гибкость", "Малый размер"],
+        "cons": ["Надо привыкнуть к классовой модели"],
+        "alternatives": ["Bootstrap", "Chakra UI"]
+      },
+      {
+        "name": "Bootstrap",
+        "description": "Один из самых популярных CSS фреймворков.",
+        "use_cases": ["Прототипы", "Корпоративные сайты"],
+        "pros": ["Быстрый старт", "Готовые компоненты"],
+        "cons": ["Сайты получаются однообразными"],
+        "alternatives": ["TailwindCSS", "Material UI"]
+      },
+      {
+        "name": "Material UI",
+        "description": "UI-фреймворк для React на основе Google Material Design.",
+        "use_cases": ["React приложения", "Админки"],
+        "pros": ["Готовые компоненты", "Большая экосистема"],
+        "cons": ["Только для React"],
+        "alternatives": ["Ant Design", "Chakra UI"]
+      },
+      {
+        "name": "Ant Design",
+        "description": "Популярный UI-фреймворк для React от Alibaba.",
+        "use_cases": ["Админ-панели", "B2B-приложения"],
+        "pros": ["Много компонентов", "Поддержка TypeScript"],
+        "cons": ["Тяжёлый", "Сложный кастомный дизайн"],
+        "alternatives": ["Material UI", "Chakra UI"]
+      },
+      {
+        "name": "Chakra UI",
+        "description": "UI-библиотека для React с упором на простоту.",
+        "use_cases": ["SaaS", "Стартапы"],
+        "pros": ["Лёгкость", "Темизация"],
+        "cons": ["Только React"],
+        "alternatives": ["TailwindCSS", "Material UI"]
+      }
+    ],
+    "cloud": [
+      {
+        "name": "AWS",
+        "description": "Крупнейший облачный провайдер.",
+        "use_cases": ["Highload", "Enterprise"],
+        "pros": ["Огромное количество сервисов", "Надёжность"],
+        "cons": ["Сложность тарифов", "Крутая кривая обучения"],
+        "alternatives": ["GCP", "Azure"]
+      },
+      {
+        "name": "GCP",
+        "description": "Облачная платформа от Google.",
+        "use_cases": ["ML/AI проекты", "Стартапы"],
+        "pros": ["Интеграция с BigQuery, ML", "Хорошая аналитика"],
+        "cons": ["Меньше сервисов, чем у AWS"],
+        "alternatives": ["AWS", "Azure"]
+      },
+      {
+        "name": "Azure",
+        "description": "Облачные сервисы Microsoft.",
+        "use_cases": ["Корпоративные системы", "Enterprise"],
+        "pros": ["Глубокая интеграция с Microsoft продуктами"],
+        "cons": ["Сложный интерфейс"],
+        "alternatives": ["AWS", "GCP"]
+      },
+      {
+        "name": "DigitalOcean",
+        "description": "Облако для малого и среднего бизнеса.",
+        "use_cases": ["Стартапы", "Небольшие проекты"],
+        "pros": ["Простота", "Дешевле AWS"],
+        "cons": ["Меньше возможностей"],
+        "alternatives": ["Linode", "Heroku"]
+      },
+      {
+        "name": "Vercel",
+        "description": "Хостинг для фронтенд-проектов.",
+        "use_cases": ["Next.js", "Статические сайты"],
+        "pros": ["Простота деплоя", "Интеграция с Git"],
+        "cons": ["Ограничен вебом"],
+        "alternatives": ["Netlify"]
+      }
+    ],
+    "ci_cd": [
+      {
+        "name": "GitHub Actions",
+        "description": "CI/CD внутри GitHub.",
+        "use_cases": ["Open source", "Стартапы"],
+        "pros": ["Простая настройка", "Интеграция с GitHub"],
+        "cons": ["Не всегда гибкий"],
+        "alternatives": ["GitLab CI", "Jenkins"]
+      },
+      {
+        "name": "GitLab CI",
+        "description": "Встроенный CI/CD в GitLab.",
+        "use_cases": ["Корпоративные проекты"],
+        "pros": ["Интеграция с GitLab", "Гибкость"],
+        "cons": ["Требует свой сервер или GitLab SaaS"],
+        "alternatives": ["GitHub Actions", "Jenkins"]
+      },
+      {
+        "name": "Jenkins",
+        "description": "Один из самых старых CI/CD инструментов.",
+        "use_cases": ["Enterprise", "Highload проекты"],
+        "pros": ["Очень гибкий", "Огромное количество плагинов"],
+        "cons": ["Сложная настройка", "Устаревший UI"],
+        "alternatives": ["GitHub Actions", "GitLab CI"]
+      },
+      {
+        "name": "CircleCI",
+        "description": "CI/CD платформа для облака.",
+        "use_cases": ["Стартапы", "SaaS"],
+        "pros": ["Простота", "Облачная модель"],
+        "cons": ["Дороже на больших масштабах"],
+        "alternatives": ["TravisCI"]
+      },
+      {
+        "name": "ArgoCD",
+        "description": "CD для Kubernetes.",
+        "use_cases": ["Kubernetes проекты"],
+        "pros": ["GitOps подход", "Отличная интеграция с K8s"],
+        "cons": ["Нужны знания Kubernetes"],
+        "alternatives": ["FluxCD"]
+      }
+    ],
+    "message_brokers": [
+      {
+        "name": "RabbitMQ",
+        "description": "Очередь сообщений с поддержкой AMQP.",
+        "use_cases": ["Очереди задач", "Микросервисы"],
+        "pros": ["Простота", "Надёжность"],
+        "cons": ["Медленнее Kafka при больших нагрузках"],
+        "alternatives": ["Kafka", "ActiveMQ"]
+      },
+      {
+        "name": "Kafka",
+        "description": "Дистрибьютед стриминговая платформа.",
+        "use_cases": ["Big Data", "Стриминг событий"],
+        "pros": ["Высокая производительность", "Масштабируемость"],
+        "cons": ["Сложность настройки", "Большой overhead"],
+        "alternatives": ["RabbitMQ", "Pulsar"]
+      },
+      {
+        "name": "NATS",
+        "description": "Лёгкий брокер сообщений.",
+        "use_cases": ["Микросервисы", "Real-time системы"],
+        "pros": ["Простота", "Низкая задержка"],
+        "cons": ["Меньше возможностей, чем у Kafka"],
+        "alternatives": ["RabbitMQ", "Kafka"]
+      },
+      {
+        "name": "ActiveMQ",
+        "description": "Брокер сообщений от Apache.",
+        "use_cases": ["Java экосистема"],
+        "pros": ["Интеграция с Java"],
+        "cons": ["Устаревает"],
+        "alternatives": ["RabbitMQ", "Kafka"]
+      }
+    ],
+    "search": [
+      {
+        "name": "Elasticsearch",
+        "description": "Поисковый движок на базе Lucene.",
+        "use_cases": ["Full-text поиск", "Логирование", "Аналитика"],
+        "pros": ["Мощный поиск", "Большая экосистема (ELK)"],
+        "cons": ["Требовательность к ресурсам"],
+        "alternatives": ["OpenSearch", "MeiliSearch"]
+      },
+      {
+        "name": "OpenSearch",
+        "description": "Форк Elasticsearch от AWS.",
+        "use_cases": ["Поиск", "Логи"],
+        "pros": ["Open source", "AWS поддержка"],
+        "cons": ["Меньше коммьюнити"],
+        "alternatives": ["Elasticsearch"]
+      },
+      {
+        "name": "MeiliSearch",
+        "description": "Быстрый и лёгкий search движок.",
+        "use_cases": ["Full-text поиск", "SaaS"],
+        "pros": ["Простота", "Очень быстрый"],
+        "cons": ["Меньше возможностей, чем у Elasticsearch"],
+        "alternatives": ["Typesense"]
+      },
+      {
+        "name": "Typesense",
+        "description": "Open-source движок для быстрого поиска.",
+        "use_cases": ["SaaS", "Поиск по товарам"],
+        "pros": ["Простота API", "Высокая скорость"],
+        "cons": ["Меньше возможностей"],
+        "alternatives": ["MeiliSearch"]
+      }
+    ],
+    "ai_ml": [
+      {
+        "name": "TensorFlow",
+        "description": "Фреймворк для машинного обучения от Google.",
+        "use_cases": ["DL/ML модели", "Продакшен"],
+        "pros": ["Поддержка Google", "Гибкость"],
+        "cons": ["Сложность API"],
+        "alternatives": ["PyTorch"]
+      },
+      {
+        "name": "PyTorch",
+        "description": "Фреймворк для машинного обучения от Meta.",
+        "use_cases": ["Исследования", "Прототипы", "ML в продакшене"],
+        "pros": ["Простой API", "Большое сообщество"],
+        "cons": ["Меньше встроенных инструментов для продакшена"],
+        "alternatives": ["TensorFlow"]
+      },
+      {
+        "name": "scikit-learn",
+        "description": "Библиотека ML для Python.",
+        "use_cases": ["Классика ML", "Прототипирование"],
+        "pros": ["Простота", "Много алгоритмов"],
+        "cons": ["Не для нейросетей"],
+        "alternatives": ["XGBoost", "LightGBM"]
+      },
+      {
+        "name": "HuggingFace Transformers",
+        "description": "Библиотека NLP моделей.",
+        "use_cases": ["NLP", "LLM", "Чат-боты"],
+        "pros": ["Огромное количество моделей", "Простота использования"],
+        "cons": ["Ресурсоёмкость"],
+        "alternatives": ["spaCy", "OpenAI API"]
+      }
+    ],
+    "monitoring": [
+      {
+        "name": "Prometheus",
+        "description": "Мониторинг и метрики.",
+        "use_cases": ["Backend", "Kubernetes"],
+        "pros": ["Pull-модель", "Гибкий язык запросов (PromQL)"],
+        "cons": ["Нужна визуализация"],
+        "alternatives": ["Grafana Mimir"]
+      },
+      {
+        "name": "Grafana",
+        "description": "Визуализация метрик и логов.",
+        "use_cases": ["Dashboard", "Аналитика"],
+        "pros": ["Поддержка множества источников данных"],
+        "cons": ["Нужен источник метрик"],
+        "alternatives": ["Kibana"]
+      },
+      {
+        "name": "Loki",
+        "description": "Лог-агрегатор от Grafana Labs.",
+        "use_cases": ["Логирование"],
+        "pros": ["Интеграция с Grafana", "Лёгкий"],
+        "cons": ["Не такой мощный, как ELK"],
+        "alternatives": ["ELK", "Graylog"]
+      },
+      {
+        "name": "Jaeger",
+        "description": "Distributed Tracing.",
+        "use_cases": ["Микросервисы", "Отладка"],
+        "pros": ["OpenTelemetry поддержка"],
+        "cons": ["Крутая кривая обучения"],
+        "alternatives": ["Zipkin"]
+      },
+      {
+        "name": "Sentry",
+        "description": "Мониторинг ошибок и перфоманса.",
+        "use_cases": ["Frontend", "Backend"],
+        "pros": ["Простота", "Много SDK"],
+        "cons": ["Платные фичи"],
+        "alternatives": ["Rollbar", "NewRelic"]
+      }
+    ]
+  },
+  "meta": {
+    "version": "1.0",
+    "generated_at": "2025-08-16T12:00:00Z",
+    "author": "Suggest Service"
+  }
+}
