@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
-import { RouterModule } from '@nestjs/core';
 import { StackModule } from './stack/stack.module';
 import { SuggestController } from './suggest.controller';
+import { RouterModule } from '@nestjs/core';
 
 @Module({
   imports: [
@@ -10,10 +10,10 @@ import { SuggestController } from './suggest.controller';
       {
         path: 'suggest',
         module: StackModule,
-      }
-    ])
+      },
+    ]),
   ],
   controllers: [SuggestController],
-  exports: [StackModule]
+  exports: [StackModule],
 })
-export class SuggestModule { }
+export class SuggestModule {}
