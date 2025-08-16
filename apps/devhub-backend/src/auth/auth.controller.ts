@@ -14,6 +14,7 @@ import { AuthService } from './auth.service';
 import { LoginUserDto } from './dto/login-user.dto';
 import { JwtAuthGuard } from './guards/jwt-auth.guard';
 import { Response } from 'express';
+import { ApiBearerAuth, ApiOperation, ApiResponse } from '@nestjs/swagger';
 
 @Controller('auth')
 export class AuthController {
@@ -21,12 +22,16 @@ export class AuthController {
 
   @Post('register')
   @HttpCode(HttpStatus.CREATED)
+  @ApiOperation({ summary: 'Регистрация нового пользователя' })
+  @ApiResponse({ status: 201, description: 'Пользователь успешно зарегистрирован.' })
   async register(@Body() dto: RegisterUserDto) {
     return this.authService.register(dto);
   }
 
   @Post('login')
   @HttpCode(HttpStatus.OK)
+  @ApiOperation({ summary: 'Авторизация пользователя' })
+  @ApiResponse({ status: 200, description: 'Пользователь успешно авторизован.' })
   async login(@Body() dto: LoginUserDto, @Res({ passthrough: true }) res: Response) {
     const { accessToken, user, message, date } = await this.authService.login(dto);
 
@@ -42,6 +47,9 @@ export class AuthController {
   @UseGuards(JwtAuthGuard)
   @Get('logout')
   @HttpCode(HttpStatus.OK)
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Выход из аккаунта' })
+  @ApiResponse({ status: 200, description: 'Пользователь успешно вышел.' })
   async logout(@Res({ passthrough: true }) res: Response) {
     res.clearCookie('accessToken', {
       httpOnly: true,
@@ -53,6 +61,9 @@ export class AuthController {
   @UseGuards(JwtAuthGuard)
   @Get('me')
   @HttpCode(HttpStatus.OK)
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Получение информации о текущем пользователе' })
+  @ApiResponse({ status: 200, description: 'Данные текущего пользователя.' })
   async me(@Req() req) {
     return req.user;
   }
